@@ -1,0 +1,26 @@
+{
+  "name": "soupy",
+  "version": "0.1.0",
+  "private": true,
+  "description": "AI-based support and resource navigation MVP for unsheltered people in Washington, DC.",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev -w @soupy/api\" \"npm run dev -w @soupy/web\"",
+    "build": "npm run build -w @soupy/shared && npm run build -w @soupy/api && npm run build -w @soupy/web",
+    "typecheck": "npm run typecheck -w @soupy/shared && npm run typecheck -w @soupy/api && npm run typecheck -w @soupy/web",
+    "prisma:generate": "prisma generate",
+    "prisma:migrate": "prisma migrate dev",
+    "prisma:seed": "tsx prisma/seed.ts"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.22.0",
+    "concurrently": "^9.1.0",
+    "prisma": "^5.22.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.6.3"
+  },
+  "devDependencies": {}
+}
