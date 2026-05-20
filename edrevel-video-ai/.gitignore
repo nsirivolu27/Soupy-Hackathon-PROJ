@@ -1,9 +1,0 @@
-__pycache__/
-.pytest_cache/
-pytest-cache-files-*/
-.env
-outputs/
-uploads/
-data/
-*.pyc
-yolov8*.pt
